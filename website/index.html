@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Amra Botanical Café · Koh Dach, Silk Island</title>
+<meta name="description" content="A slow, green corner of Koh Dach. Amra Botanical Café on Silk Island, a short ride from Phnom Penh.">
+<meta name="theme-color" content="#E9DCC3">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..500;1,9..144,300..400&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E9DCC3; --bg-deep:#DFCFB1; --ink:#171d16; --muted:#5f6a58;
+  --sage:#768A6F; --sage-deep:#4f6249; --clay:#C47F57; --amber:#D9A05B; --bark:#5A3E36;
+  --glass:rgba(255,255,255,.42); --line:rgba(23,29,22,.12);
+  --serif:'Fraunces',Georgia,serif; --sans:'Plus Jakarta Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+
+/* nav */
+nav{position:fixed;inset:0 0 auto 0;z-index:50;padding:14px 0;transition:background .4s,backdrop-filter .4s,box-shadow .4s}
+nav.solid{background:rgba(233,220,195,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 1px 0 var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:var(--serif);font-size:24px;letter-spacing:.02em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand svg{width:26px;height:26px}
+nav ul{display:flex;gap:28px;list-style:none;font-size:14px;font-weight:500}
+nav ul a{text-decoration:none;opacity:.75;transition:opacity .2s}
+nav ul a:hover{opacity:1}
+@media(max-width:620px){nav ul{gap:18px;font-size:13px}.brand span{display:none}}
+
+/* hero */
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;position:relative;padding:120px 0 80px;isolation:isolate}
+.hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(52px,11vw,132px);line-height:.98;letter-spacing:-.02em}
+.hero h1 em{font-style:italic;color:var(--sage-deep)}
+.eyebrow{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin-bottom:26px;font-weight:600}
+.hero p.lede{max-width:460px;margin:30px auto 0;color:var(--muted);font-size:18px}
+.scroll-cue{position:absolute;bottom:28px;left:50%;translate:-50% 0;width:1px;height:54px;background:linear-gradient(var(--ink),transparent);opacity:.35;animation:cue 2.4s ease-in-out infinite}
+@keyframes cue{0%,100%{scale:1 .4;transform-origin:top}50%{scale:1 1}}
+.hero{overflow:hidden}
+html,body{max-width:100%;overflow-x:clip}
+.leaf{position:absolute;z-index:-1;color:var(--sage);opacity:.55;will-change:transform}
+.leaf svg{width:100%;height:100%;display:block}
+.l1{width:220px;left:-30px;top:16%;rotate:-18deg;animation:sway 9s ease-in-out infinite}
+.l2{width:300px;right:-60px;top:8%;rotate:24deg;color:var(--sage-deep);opacity:.4;animation:sway 12s ease-in-out -3s infinite}
+.l3{width:170px;left:8%;bottom:8%;rotate:40deg;color:var(--clay);opacity:.35;animation:sway 10s ease-in-out -5s infinite}
+.l4{width:240px;right:6%;bottom:4%;rotate:-30deg;animation:sway 11s ease-in-out -1s infinite}
+@keyframes sway{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-16px) rotate(4deg)}}
+@media(max-width:700px){
+  .l1{width:110px;left:-24px;top:12%}
+  .l2{width:130px;right:-30px;top:6%}
+  .l3{width:90px;left:4%;bottom:6%}
+  .l4{width:120px;right:-10px;bottom:3%}
+}
+
+/* sections */
+section{padding:clamp(80px,12vw,160px) 0}
+h2{font-family:var(--serif);font-weight:300;font-size:clamp(36px,6vw,68px);line-height:1.05;letter-spacing:-.015em}
+h2 em{font-style:italic;color:var(--sage-deep)}
+.story{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.story p{color:var(--muted);margin-top:22px;max-width:46ch}
+.story p:first-of-type{margin-top:30px}
+.frame{aspect-ratio:4/5;border-radius:200px 200px 28px 28px;overflow:hidden;position:relative;background:linear-gradient(160deg,var(--sage) 0%,var(--sage-deep) 100%)}
+.frame img{width:100%;height:100%;object-fit:cover}
+@media(max-width:780px){.story{grid-template-columns:1fr}.frame{max-width:380px}}
+
+/* placeholder art */
+.ph{position:absolute;inset:0;display:grid;place-items:center;color:rgba(255,255,255,.55);font-size:12px;letter-spacing:.2em;text-transform:uppercase}
+.ph svg{position:absolute;width:70%;opacity:.18}
+
+/* values strip */
+.strip{background:var(--bg-deep);padding:46px 0;overflow:hidden;border-block:1px solid var(--line)}
+.strip .track{display:flex;gap:56px;width:max-content;animation:slide 40s linear infinite;font-family:var(--serif);font-style:italic;font-size:26px;color:var(--bark)}
+.strip .track span{display:flex;align-items:center;gap:56px;white-space:nowrap}
+.strip .track span::after{content:'';width:8px;height:8px;border-radius:50%;background:var(--clay)}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* gallery */
+.gal-head{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:48px;flex-wrap:wrap}
+.gal-head p{color:var(--muted);max-width:34ch}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+.gallery figure{position:relative;border-radius:22px;overflow:hidden;background:var(--sage);min-height:240px}
+.gallery figure img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s var(--ease)}
+.gallery figure:hover img{transform:scale(1.05)}
+.g1{grid-column:span 7;aspect-ratio:7/5}
+.g2{grid-column:span 5;aspect-ratio:5/5;background:var(--clay)!important}
+.g3{grid-column:span 4;aspect-ratio:1/1;background:var(--amber)!important}
+.g4{grid-column:span 4;aspect-ratio:1/1;background:var(--sage-deep)!important}
+.g5{grid-column:span 4;aspect-ratio:1/1;background:var(--bark)!important}
+.g6{grid-column:span 12;aspect-ratio:16/6;background:var(--sage)!important}
+@media(max-width:700px){.g1,.g2,.g3,.g4,.g5,.g6{grid-column:span 12;aspect-ratio:4/3}}
+
+/* visit */
+.visit{background:var(--sage-deep);color:#f3ead8;border-radius:40px 40px 0 0}
+.visit h2 em{color:var(--amber)}
+.visit-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,6vw,80px);margin-top:50px}
+.card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:26px;padding:34px;backdrop-filter:blur(8px)}
+.card h3{font-family:var(--serif);font-weight:400;font-size:24px;margin-bottom:14px}
+.card p,.card li{color:rgba(243,234,216,.8);font-size:16px}
+.card ul{list-style:none;display:grid;gap:10px}
+.card li{display:flex;justify-content:space-between;gap:20px;border-bottom:1px solid rgba(255,255,255,.1);padding-bottom:10px}
+.card + .card{margin-top:18px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;font-weight:600;font-size:15px;text-decoration:none;transition:transform .25s var(--ease),background .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn.p{background:var(--amber);color:var(--ink)}
+.btn.g{border:1px solid rgba(255,255,255,.35);color:#f3ead8}
+.btn.g:hover{background:rgba(255,255,255,.1)}
+.todo{outline:1px dashed var(--amber);outline-offset:3px;border-radius:4px}
+@media(max-width:780px){.visit-grid{grid-template-columns:1fr}}
+footer{background:var(--sage-deep);color:rgba(243,234,216,.6);text-align:center;padding:0 0 46px;font-size:14px}
+footer .brand{justify-content:center;color:#f3ead8;margin-bottom:10px}
+
+/* reveal */
+.rv{opacity:0;translate:0 28px;transition:opacity 1s var(--ease),translate 1s var(--ease)}
+.rv.in{opacity:1;translate:0 0}
+.rv.d1{transition-delay:.12s}.rv.d2{transition-delay:.24s}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;translate:0 0}}
+</style>
+</head>
+<body>
+
+<!-- reusable leaf shape -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="leaf" viewBox="0 0 100 160">
+    <path d="M50 4C14 40 6 96 50 156 94 96 86 40 50 4Z" fill="currentColor"/>
+    <path d="M50 24V150M50 60 28 82M50 86 70 106M50 112 32 130" stroke="rgba(0,0,0,.18)" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </symbol>
+</svg>
+
+<nav id="nav">
+  <div class="wrap">
+    <a href="#top" class="brand"><svg viewBox="0 0 100 160" style="color:var(--sage-deep)"><use href="#leaf"/></svg><span>Amra</span></a>
+    <ul>
+      <li><a href="#story">Story</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#visit">Visit</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="leaf l1"><svg viewBox="0 0 100 160"><use href="#leaf"/></svg></div>
+  <div class="leaf l2"><svg viewBox="0 0 100 160"><use href="#leaf"/></svg></div>
+  <div class="leaf l3"><svg viewBox="0 0 100 160"><use href="#leaf"/></svg></div>
+  <div class="leaf l4"><svg viewBox="0 0 100 160"><use href="#leaf"/></svg></div>
+  <div class="wrap">
+    <p class="eyebrow rv">Botanical Café · Koh Dach</p>
+    <h1 class="rv d1">Slow down,<br><em>stay green.</em></h1>
+    <p class="lede rv d2">A quiet corner of Silk Island where the coffee is slow, the air is warm and nobody is in a rush.</p>
+  </div>
+  <div class="scroll-cue"></div>
+</header>
+
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span>Slow mornings</span><span>Green corners</span><span>River breeze</span><span>Silk Island</span><span>Good company</span>
+    <span>Slow mornings</span><span>Green corners</span><span>River breeze</span><span>Silk Island</span><span>Good company</span>
+  </div>
+</div>
+
+<section id="story">
+  <div class="wrap story">
+    <div>
+      <p class="eyebrow rv">Our story</p>
+      <h2 class="rv d1">Born between the <em>river and the leaves.</em></h2>
+      <p class="rv d2">Koh Dach is only a short ride from Phnom Penh, but it runs on a different clock. Weavers work silk by hand, bikes rattle down dirt lanes and the Mekong keeps moving at its own pace.</p>
+      <p class="rv d2">Amra was made for that pace. A place to sit under plants, order something good and let an hour disappear without feeling bad about it.</p>
+    </div>
+    <div class="frame rv d1" id="storyFrame">
+      <div class="ph"><svg viewBox="0 0 100 160" style="color:#fff"><use href="#leaf"/></svg><span>Your photo here</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <div class="gal-head">
+      <h2 class="rv">A look <em>around.</em></h2>
+      <p class="rv d1">Light through the leaves, a cup on a wooden table, the road in. Come see it for real.</p>
+    </div>
+    <div class="gallery" id="galleryGrid">
+      <figure class="g1 rv"><div class="ph"><svg viewBox="0 0 100 160"><use href="#leaf"/></svg><span>The space</span></div></figure>
+      <figure class="g2 rv d1"><div class="ph"><svg viewBox="0 0 100 160"><use href="#leaf"/></svg><span>Drinks</span></div></figure>
+      <figure class="g3 rv"><div class="ph"><svg viewBox="0 0 100 160"><use href="#leaf"/></svg><span>Details</span></div></figure>
+      <figure class="g4 rv d1"><div class="ph"><svg viewBox="0 0 100 160"><use href="#leaf"/></svg><span>Plants</span></div></figure>
+      <figure class="g5 rv d2"><div class="ph"><svg viewBox="0 0 100 160"><use href="#leaf"/></svg><span>Koh Dach</span></div></figure>
+      <figure class="g6 rv"><div class="ph"><svg viewBox="0 0 100 160"><use href="#leaf"/></svg><span>Wide shot</span></div></figure>
+    </div>
+  </div>
+</section>
+
+<section id="visit" class="visit">
+  <div class="wrap">
+    <p class="eyebrow rv" style="color:rgba(243,234,216,.6)">Plan your visit</p>
+    <h2 class="rv d1">Come find <em>us.</em></h2>
+    <div class="visit-grid">
+      <div>
+        <div class="card rv">
+          <h3>Getting here</h3>
+          <p>Amra is on Koh Dach, also called Silk Island, in Kandal Province. Drive or ride out of Phnom Penh, then cross to the island by ferry. Allow a relaxed hour, more on weekends.</p>
+          <div class="btns">
+            <a class="btn p" id="mapBtn" href="#" target="_blank" rel="noopener">Open in Maps</a>
+            <a class="btn g" id="igBtn" href="https://instagram.com/amra.phnompenh" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card rv d1">
+          <h3>Opening hours</h3>
+          <ul id="hours"></ul>
+        </div>
+        <div class="card rv d2">
+          <h3>Say hello</h3>
+          <p id="contactLine"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand"><svg viewBox="0 0 100 160" style="width:22px;color:var(--amber)"><use href="#leaf"/></svg><span style="display:inline">Amra</span></div>
+    <p>Botanical Café · Koh Dach, Silk Island, Cambodia</p>
+  </div>
+</footer>
+
+<script>
+/* ============ EDIT ME ============
+   Everything you need to fill in lives here. Anything left empty shows a
+   dashed amber outline so you can spot it before launch. */
+const SITE = {
+  mapsUrl: "",                 // paste the Google Maps share link for Amra
+  phone: "",                   // e.g. +855 12 345 678
+  email: "",
+  hours: [                     // fill in real hours
+    ["Monday to Friday", ""],
+    ["Saturday", ""],
+    ["Sunday", ""]
+  ],
+  photos: {                    // drop files in website/assets and list them here
+    story: "",                 // e.g. "assets/story.jpg"
+    gallery: ["", "", "", "", "", ""]
+  }
+};
+/* ================================= */
+
+// nav background on scroll
+const nav = document.getElementById('nav');
+const onScroll = () => nav.classList.toggle('solid', scrollY > 40);
+addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+// reveal on scroll
+const io = new IntersectionObserver(es => es.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } }), {threshold:.15});
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+// gentle parallax on leaves
+const leaves = [...document.querySelectorAll('.leaf')];
+if(!matchMedia('(prefers-reduced-motion: reduce)').matches){
+  addEventListener('scroll', () => {
+    const y = scrollY;
+    leaves.forEach((l,i) => l.style.translate = `0 ${y * (0.08 + i * 0.04)}px`);
+  }, {passive:true});
+}
+
+// photos: swap the placeholder for a real image when a path is set
+function putPhoto(container, src, alt){
+  if(!src) return;
+  const img = new Image(); img.src = src; img.alt = alt; img.loading = 'lazy';
+  img.onload = () => { container.querySelector('.ph')?.remove(); container.prepend(img); };
+}
+putPhoto(document.getElementById('storyFrame'), SITE.photos.story, 'Inside Amra Botanical Café');
+document.querySelectorAll('#galleryGrid figure').forEach((f,i) => putPhoto(f, SITE.photos.gallery[i], 'Amra Botanical Café photo ' + (i+1)));
+
+// visit details
+const mapBtn = document.getElementById('mapBtn');
+if(SITE.mapsUrl){ mapBtn.href = SITE.mapsUrl; } else { mapBtn.href = 'https://www.google.com/maps/search/?api=1&query=Koh+Dach+Silk+Island+Cambodia'; mapBtn.classList.add('todo'); }
+
+const hours = document.getElementById('hours');
+SITE.hours.forEach(([d,t]) => {
+  const li = document.createElement('li');
+  li.innerHTML = `<span>${d}</span><span class="${t ? '' : 'todo'}">${t || 'add hours'}</span>`;
+  hours.appendChild(li);
+});
+
+const c = document.getElementById('contactLine');
+const bits = [];
+if(SITE.phone) bits.push(`<a href="tel:${SITE.phone.replace(/\s/g,'')}">${SITE.phone}</a>`);
+if(SITE.email) bits.push(`<a href="mailto:${SITE.email}">${SITE.email}</a>`);
+bits.push('<a href="https://instagram.com/amra.phnompenh" target="_blank" rel="noopener">@amra.phnompenh</a>');
+c.innerHTML = bits.join('<br>');
+</script>
+</body>
+</html>
